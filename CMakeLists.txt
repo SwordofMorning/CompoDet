@@ -18,8 +18,8 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s -O3 -lrt -pthread")
 
 # ===== Step 3 : Include & Lib =====
 
-SET(_INCLUDE_PATH_ "${_BUILDROOT_PATH_}/aarch64-buildroot-linux-gnu/sysroot/usr/include/")
-SET(_LIB_PATH_ "${_BUILDROOT_PATH_}/aarch64-buildroot-linux-gnu/sysroot/usr/lib/")
+SET(_INCLUDE_PATH_ "${_BUILDROOT_PATH_}/arm-buildroot-linux-gnueabihf/sysroot/usr/include/")
+SET(_LIB_PATH_ "${_BUILDROOT_PATH_}/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/")
 
 LINK_DIRECTORIES(
     ${_LIB_PATH_}

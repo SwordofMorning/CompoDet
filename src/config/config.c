@@ -1,5 +1,10 @@
 #include "config.h"
 
+/**
+ * ==================== @par Section I : Init ====================
+ * 
+ */
+
 static void Init_Log()
 {
     litelog.init("CompoDec_Main");
@@ -14,9 +19,31 @@ static void Init_Log()
     litelog.log.notice("=====================================");
 }
 
+/**
+ * ==================== @par Section II : Exit ====================
+ * 
+ */
+
+static void Exit_Log()
+{
+    litelog.exit();
+}
+
+/**
+ * ==================== @par Section III : API ====================
+ * 
+ */
+
 int Config_Init()
 {
     Init_Log();
+
+    return 0;
+}
+
+int Config_Exit()
+{
+    Exit_Log();
 
     return 0;
 }
