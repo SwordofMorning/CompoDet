@@ -4,8 +4,8 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 
 # ===== Step 1 : Set Cross Compiler Path =====
 
-SET(_SDK_PATH_ "/hdd/System/RV1126/")
-SET(_BUILDROOT_PATH_ "${_SDK_PATH_}RV1126_RV1109_LINUX_SDK_V2.2.5.1_20230530/buildroot/output/rockchip_rv1126_rv1109/host/")
+SET(_SDK_PATH_ "/hdd/System/RV1126/RV1126_RV1109_LINUX_SDK_V2.2.5.1_20230530/")
+SET(_BUILDROOT_PATH_ "${_SDK_PATH_}buildroot/output/rockchip_rv1126_rv1109/host/")
 SET(_COMPILER_PATH_ "${_BUILDROOT_PATH_}bin/")
 
 SET(CMAKE_C_COMPILER ${_COMPILER_PATH_}arm-linux-gnueabihf-gcc)
@@ -23,10 +23,13 @@ SET(_LIB_PATH_ "${_BUILDROOT_PATH_}/arm-buildroot-linux-gnueabihf/sysroot/usr/li
 
 LINK_DIRECTORIES(
     ${_LIB_PATH_}
+    "${_SDK_PATH_}/buildroot/oem/usr/lib/"
 )
 
 INCLUDE_DIRECTORIES(
     ${_INCLUDE_PATH_}
+    "${_SDK_PATH_}external/rkmedia/examples"
+    "${_SDK_PATH_}external/rkmedia/include/rkmedia"
 )
 
 # ===== Step 4 : Set Application Name =====
