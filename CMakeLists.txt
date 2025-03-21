@@ -32,6 +32,10 @@ INCLUDE_DIRECTORIES(
     "${_SDK_PATH_}external/rkmedia/examples"
     "${_SDK_PATH_}external/rkmedia/include/rkmedia"
     "${_SDK_PATH_}external/camera_engine_rkaiq/include/common"
+    "${_SDK_PATH_}/external/camera_engine_rkaiq/include/uAPI/"
+    "${_SDK_PATH_}/external/camera_engine_rkaiq/include/xcore/"
+    "${_SDK_PATH_}/external/camera_engine_rkaiq/include/algos/"
+    "${_SDK_PATH_}/external/camera_engine_rkaiq/include/iq_parser/"
 )
 
 # ===== Step 4 : Set Application Name =====

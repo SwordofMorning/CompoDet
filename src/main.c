@@ -13,6 +13,8 @@
 #include <time.h>
 #include <unistd.h>
 
+#define RKAIQ 1
+
 #include "common/sample_common.h"
 #include "rkmedia_api.h"
 #include "rk_aiq_comm.h"
@@ -22,8 +24,6 @@ static void sigterm_handler(int sig) {
   fprintf(stderr, "signal %d\n", sig);
   quit = true;
 }
-
-#define RKAIQ 1
 
 static RK_CHAR optstr[] = "?::a::I:M:";
 static const struct option long_options[] = {
