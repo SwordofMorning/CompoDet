@@ -13,4 +13,5 @@ ADD_EXECUTABLE(${APP_NAME} ${SRC_LIST})
 TARGET_LINK_LIBRARIES(
     ${APP_NAME}
     libeasymedia.so
+    libsample_common_isp.so
 )

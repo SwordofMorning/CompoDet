@@ -15,12 +15,15 @@
 
 #include "common/sample_common.h"
 #include "rkmedia_api.h"
+#include "rk_aiq_comm.h"
 
 static bool quit = false;
 static void sigterm_handler(int sig) {
   fprintf(stderr, "signal %d\n", sig);
   quit = true;
 }
+
+#define RKAIQ 1
 
 static RK_CHAR optstr[] = "?::a::I:M:";
 static const struct option long_options[] = {
@@ -116,6 +119,7 @@ int main(int argc, char *argv[]) {
   vi_chn_attr.u32Height = video_height;
   vi_chn_attr.enPixFmt = IMAGE_TYPE_NV12;
   vi_chn_attr.enWorkMode = VI_WORK_MODE_NORMAL;
+  vi_chn_attr.enBufType = VI_CHN_BUF_TYPE_MMAP;
   ret = RK_MPI_VI_SetChnAttr(s32CamId, 0, &vi_chn_attr);
   ret |= RK_MPI_VI_EnableChn(s32CamId, 0);
   if (ret) {

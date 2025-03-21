@@ -18,18 +18,20 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s -O3 -lrt -pthread")
 
 # ===== Step 3 : Include & Lib =====
 
-SET(_INCLUDE_PATH_ "${_BUILDROOT_PATH_}/arm-buildroot-linux-gnueabihf/sysroot/usr/include/")
-SET(_LIB_PATH_ "${_BUILDROOT_PATH_}/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/")
+SET(_INCLUDE_PATH_ "${_BUILDROOT_PATH_}arm-buildroot-linux-gnueabihf/sysroot/usr/include/")
+SET(_LIB_PATH_ "${_BUILDROOT_PATH_}arm-buildroot-linux-gnueabihf/sysroot/usr/lib/")
 
 LINK_DIRECTORIES(
     ${_LIB_PATH_}
-    "${_SDK_PATH_}/buildroot/oem/usr/lib/"
+    "${_SDK_PATH_}buildroot/oem/usr/lib/"
+    "${_SDK_PATH_}buildroot/oem/ui/jp_ui2024011601/qt5_usr_lib/lib/"
 )
 
 INCLUDE_DIRECTORIES(
     ${_INCLUDE_PATH_}
     "${_SDK_PATH_}external/rkmedia/examples"
     "${_SDK_PATH_}external/rkmedia/include/rkmedia"
+    "${_SDK_PATH_}external/camera_engine_rkaiq/include/common"
 )
 
 # ===== Step 4 : Set Application Name =====
