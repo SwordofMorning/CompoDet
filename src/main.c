@@ -13,8 +13,6 @@
 #include <time.h>
 #include <unistd.h>
 
-#define RKAIQ 1
-
 #include "common/sample_common.h"
 #include "rkmedia_api.h"
 #include "rk_aiq_comm.h"
@@ -64,6 +62,7 @@ int main(int argc, char *argv[]) {
   RK_S32 s32CamId = 1;
 #ifdef RKAIQ
   RK_BOOL bMultictx = RK_FALSE;
+  printf("------------------------------------------DEBUG: RKAIQ Enable\n");
 #endif
   int c;
   char *iq_file_dir = NULL;
